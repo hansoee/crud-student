@@ -1,0 +1,20 @@
+USE studentdb;
+
+CREATE TABLE students (
+  NIM INT PRIMARY KEY,
+  NamaDepan VARCHAR(50),
+  NamaBelakang VARCHAR(50),
+  TanggalLahir DATE
+);
+
+INSERT INTO students (NIM, NamaDepan, NamaBelakang, TanggalLahir) VALUES
+('20210101', 'John', 'Doe', '2000-01-01'),
+('20210102', 'Jane', 'Smith', '1999-02-02'),
+('20210103', 'Alice', 'Johnson', '2001-03-03'),
+('20210104', 'Bob', 'Williams', '2000-04-04'),
+('20210105', 'Charlie', 'Brown', '1999-05-05'),
+('20210106', 'David', 'Jones', '2001-06-06'),
+('20210107', 'Eve', 'Davis', '2000-07-07'),
+('20210108', 'Frank', 'Garcia', '1999-08-08'),
+('20210109', 'Grace', 'Martinez', '2001-09-09'),
+('20210110', 'Henry', 'Rodriguez', '2000-10-10');
