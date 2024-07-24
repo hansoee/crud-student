@@ -49,4 +49,12 @@
   .form-button:hover {
     background-color: #0058a3;
   }
+
+  .form-error {
+    color: white;
+    margin-bottom: 1em;
+    height: fit-content;
+    background-color: red;
+  }
+
   

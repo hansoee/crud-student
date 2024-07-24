@@ -7,10 +7,12 @@ export default function AddStudent() {
   const [NamaDepan, setNamaDepan] = useState('');
   const [NamaBelakang, setNamaBelakang] = useState('');
   const [TanggalLahir, setTanggalLahir] = useState('');
+  const [error, setError] = useState('');
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError('');
     const res = await fetch('/api/students', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -18,12 +20,15 @@ export default function AddStudent() {
     });
     if (res.ok) {
       router.push('/students');
+    } else {
+      setError("NIM IS ALREADY TAKEN");
     }
   };
 
   return (
     <div className={styles['form-container']}>
       <h1 className={styles['form-title']}>Add Student</h1>
+      {error && <p className={styles['form-error']}>{error}</p>}
       <form onSubmit={handleSubmit}>
         <div className={styles['form-group']}>
           <label>NIM</label>
@@ -45,6 +50,7 @@ export default function AddStudent() {
           <button type="submit" className={styles['form-button']}>Add</button>
         </div>
       </form>
+
     </div>
   );
 }
